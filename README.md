@@ -1,17 +1,27 @@
 # rivals-2-toolkit
 A bunch of assets for Rivals of Aether II work.
 
+# Building Fmodel Mappings File
+- First, download [Cheat Engine](https://www.cheatengine.org/downloads.php) and install.
+- Once you have Cheat Engine, open it.
+- Open Rivals 2.
+- Locate the icon on the toolbar that reads "Select a process to open", and click it.
+- From the Applications tab, select the Rivals 2 process and double-click it.
+- That panel should close. In the Cheat Engine window, click "Memory View".
+- A window titled "Memory Viewer" should be open. Go to the top ribbon and locate Tools > Inject DLL, or use the shortcut Ctrl+I.
+- Select the Dumper-7.dll file from this repo. Click "Yes" when prompted.
+- After seeing a successful injection, locate to the drive location where the mappings file is. For me, it's located under "C:\Dumper-7\5.4.2-0+UE5-Rivals2\Mappings\5.4.2-0+UE5-Rivals2.usmap".
+- Tada! You have your Unity Script Mappings file now.
+
 # Extracting JSONs using Fmodel
-
-You'll need a copy of Rivals 2, and you'll need [FModel](https://fmodel.app/download). Make sure to have both. You'll also need a Unity Script Mappings (.usmap) file. Currently, these can be found in a [thread](https://discord.com/channels/935257484359245884/1344158785752797309) in the Dragdown Wiki Discord server, though instructions for how to get them yourself will be added later.
-
+You'll need a copy of Rivals 2, and you'll need [FModel](https://fmodel.app/download). Make sure to have both.
 First, install FModel. Then, open FModel.
 - FModel needs to know where your game is, so it'll show a prompt. Click below "ADD UNDETECTED GAME".
  - You'll need to find the path where your Rivals of Aether II is installed. For me, it's installed in "C:\Program Files (x86)\Steam\steamapps\common\Rivals 2\".
  - With that path, next to Directory, click "..." and paste in your Rivals of Aether II path.
  - The name can be whatever you want, "Rivals 2" for simplicity.
  - Make sure to select UE5_4 for the engine version. Then, hit "OK". It'll ask you to restart FModel.
- Great! Now you need to add your mapping file.
+ Great! Now you need to add your mapping file, either obtained from Discord through someone posting it, or by doing the above method to build it yourself.
  - If you have it, you can simply navigate to the top ribbon of the window. Settings > General > Advanced > Local Mapping File [x]. Enable this checkbox if it is not enabled.
  - The mapping file path field should now show up. Click on "..." and navigate to your mappings file to select it.
  - Hit "OK".
@@ -24,7 +34,7 @@ First, install FModel. Then, open FModel.
   - To get the character stats, just input `CD_` into the search box, left click on the first file, hit "Ctrl+A" to select all the files, right click, and select "Save Properties (.json)".
 - Where is it exported? If you look at the bottom right, there is an icon that when highlighted, reads "Open Output Folder". Click that icon, and then navigate through Exports > Rivals2 > Content > Characters. This "Characters" folder is the one we want.
 
-Congrats! Now you have your characters folder. You can move this wherever you would like, as long as it is comfortable to access. I put this in a folder called "RIVALS_DATA" on my Documents folder.
+Congrats! Now you have your characters folder. You can move this wherever you would like, as long as it is comfortable to access. I put this in a folder called "RIVALS_DATA" on my machine.
 
 # Creating a Patch File
 You'll need Python and a notebook interpreter to do that. Personally, I use VSCodium, an open source version of VSCode to avoid any telemetry stuff if you're not a fan of that.
