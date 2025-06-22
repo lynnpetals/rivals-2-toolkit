@@ -37,26 +37,14 @@ First, install FModel. Then, open FModel.
 Congrats! Now you have your characters folder. You can move this wherever you would like, as long as it is comfortable to access. I put this in a folder called "RIVALS_DATA" on my machine.
 
 # Creating a Patch File
-You'll need Python and a notebook interpreter to do that. Personally, I use VSCodium, an open source version of VSCode to avoid any telemetry stuff if you're not a fan of that.
-- Open up `patch_making.iypnb` in your interpreter.
+Most of the work here is going to be relevant for getting the data for the wiki, since with the above JSON files, you should be able to do whatever you want with it now that you know what's going on. Here, we're just doing some simple ways to interact with it.
+You'll need Python and a notebook interpreter. Personally, I use VSCodium.
+- Open up `patch_making.ipynb` in your interpreter.
 - You'll need to update some paths. 
  - Edit the home_path variable to match where you stored your character folder from before.
  - Edit the dest variable as well. For consistency, make this match the patch version that you are updating to. For example, Rivals on patch 1.0.3 was labelled as `r2data_patch_103.json` on my end.
- - Then, click "Run All" and run all the cells in the notebook. If no errors occur, good! If an error occurs, whoops, let me know.
- - Now you've got a patch file!
+ - You'll want to go through each of the cells that you want to run.
+ - Alternatively, you can click "Run All" and run all the cells in the notebook, as long as you configured the first cell correctly. If no errors occur, good! If an error occurs, whoops, let me know.
 
-# Examining Frame Data
-Open up `analysis.ipynb`, and then "Run All" on the notebook.
-- The section under `Frame Data:` contains the cell that you'll want. It'll give frame data for every single move of every single character. If you want a specific character, you can go to `chare = x` and replace `x` with the character name you want. For example, Maypul would be `"Maypul"`.
-- There's a guide below on how to read it. It contains all the relevant info.
-
-# Updating Wiki Hit Data
-Open up `wiki_mind_reader.ipynb`. Run all the cells except for the last one. On VS Code, you can do this by going to the last cell and finding the "Execute Above Cells" button.
-- Navigate to the character's /Data wiki page and get the source for it by clicking "Edit". Copy everything on the page.
-- Paste it into readerscript.txt, and save it.
-- Then, run the bottom cell.
-  - Sometimes, the wiki will use different names for certain hits, and they have to be renamed in the `wiki_conversion.csv` file. You'll need to add an entry for it if it's missing.
-  - If you ever edit the `wiki_conversion.csv` file, you'll have to save it and rerun all the previous cells before.
-- Once that's done, open up `writerscript.txt`. Copy its contents, paste it back to the /Data wiki page, and make sure to preview it.
-- Do a manual inspection. It can get funky sometimes depending on some of the code written, or some of the formatting on the wiki page. If the correct changes show up (and they match the patch notes), everything should be good. From there, you can just save the wiki page and move on.
-- You only have to run the last cell every time you do a new character which is pretty painless.
+# Other files
+Some other files are now obsolete due to the wiki format and will be cleaned up at some point. Only one that wiki users need pay attention to is probably `patch_making.ipynb`.
